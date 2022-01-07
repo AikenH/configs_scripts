@@ -128,3 +128,13 @@ if [ "$apex_f" = "y" ] ; then
 else
     echo -e "skip install apex for now  \n ============= \n"
 fi
+
+# install btm for monitor the CPU occupy
+echo "Do u want to install bottom to monitor the CPU"
+read btm_f
+if [ "$btm_f" = "y" ]
+then
+    curl -s https://api.github.com/repos/ClementTsang/bottom/releases/latest | grep browser_download_url | grep amd64.deb | cut -d '"' -f 4 | wget -qi -
+    apt install ./bottom*.deb
+fi
+
