@@ -11,12 +11,12 @@ Record those configurations which I'll or want to save(learn) here.
 
 |    App    |     Ver.     | Desc                                                  | Fi?   | Path |
 |:---------:|:------------:| ----------------------------------------------------- | ----- | ---- |
-|   Nvim    |   ``.vim``   | Old version. Vscode-like Terminal-editor              | True  |      |
-|           |    `.lua`    | Lua Version, we configura it for future use           | False |      |
-|    Vim    |   `.vimrc`   | Simply version for ez or vim use                      | True  |      |
-|   Tmux    | `.tmux.conf` | Tools for keep running status and split workspace     | True  |      |
-|  Ranger   |    `rc.conf` | the files manager like **file-explorer**              | True  |      |
-|  Zsh+omz  |   `.zshrc`   | the **shell**, which provide some syntax and function | True  |      |
+|   Nvim    |   ``.vim``   | Old version. Vscode-like Terminal-editor              | True  |   ./   |
+|           |    `.lua`    | Lua Version, we configura it for future use           | True| nvim/*     |
+|    Vim    |   `.vimrc`   | Simply version for ez or vim use                      | True  |  ./    |
+|   Tmux    | `.tmux.conf` | Tools for keep running status and split workspace     | True  |  ./    |
+|  Ranger   |    `rc.conf` | the files manager like **file-explorer**              | True  |  ./    |
+|  Zsh+omz  |   `.zshrc`   | the **shell**, which provide some syntax and function | True  |   ./   |
 | Posh+omp  |    `.ps1`    | the windows configura of powershell                   | True  |      |
 | portanter |              | Manage **dockers**, manage for kinds of envs          | False |      |
 
