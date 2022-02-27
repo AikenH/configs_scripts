@@ -21,7 +21,7 @@ for dap_name, dap_options in pairs(dap_config) do
 end
 
 -- 打断点
-vim.keybinds.gmap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", vim.keybinds.opts)
+vim.keybinds.gmap("n", "<leader>lb", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", vim.keybinds.opts)
 -- 开启调试或到下一个断点处
 vim.keybinds.gmap("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", vim.keybinds.opts)
 -- 单步进入执行（会进入函数内部，有回溯阶段）

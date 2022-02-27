@@ -18,4 +18,4 @@ require("github-theme").setup({
     }
   end
 })
-vim.cmd([[colorscheme sonokai]])
+vim.cmd([[colorscheme catppuccin]])

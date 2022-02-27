@@ -3,7 +3,7 @@
 @Desc: test the configuration of nvim
 """
 
-import time as time
+from time import time
 
 def sayhi(words:str):
     print("{} at {}".format(words, time()))
@@ -12,4 +12,3 @@ def sayhi(words:str):
 if __name__ == "__main__":
     sayhi("hello nvim")
 
--- ( 1, s, 3 )

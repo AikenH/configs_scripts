@@ -96,6 +96,31 @@ packer.startup(
                 end
             }
 
+            use {
+                "folke/tokyonight.nvim",
+                config = function()
+                    require("conf.tokyonight")
+                end
+            }
+
+            use{
+                "folke/lsp-colors.nvim",
+            }
+
+            use {
+                "Mofiqul/dracula.nvim",
+                config = function()
+                    require("conf.dracula")
+                end
+            }
+
+            use {
+                "luisiacc/gruvbox-baby",
+                config = function()
+                    require("conf.gruvbox-baby")
+                end
+            }
+
             -- Using airline to replace  buffline and status bar
             -- but seems the buffline even worse ,so we return to buff + status
             --use {
@@ -385,7 +410,6 @@ packer.startup(
                 end
             }
 
-            -- FIXME: github copilot can not been use in wsl which becus the web can not open
             -- Github Copilot support
             use {
                 "github/Copilot.vim",
@@ -394,7 +418,7 @@ packer.startup(
                 end
             }
 
-            -- NOTE: extend lint for some langs but having bug so we donot enable for now
+            -- FIXME: extend lint for some langs but having bug so we donot enable for now
             -- use {
             --     "mfussenegger/nvim-lint",
             --     config = function ()
@@ -418,13 +442,12 @@ packer.startup(
                 end
             }
 
-            -- FIXME: the surrounded's performance weird, need to find out how to setthis
-            -- use {
-            --     "ur4ltz/surround.nvim",
-            --     config = function ()
-            --         require("conf.surround")
-            --     end
-            -- }
+            use {
+                "ur4ltz/surround.nvim",
+                config = function ()
+                    require("conf.surround")
+                end
+            }
 
             -- long screenshot of code
             use {

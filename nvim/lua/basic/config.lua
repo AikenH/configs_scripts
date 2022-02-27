@@ -10,4 +10,4 @@ vim.g.python_path = "/home/aiken/anaconda3/bin/python"
 -- FIX: we can only change the theme in the github configs
 -- maybe with the order of install the plugins
 -- but we need to find out how to solve this
--- vim.cmd([[colorscheme sonokai]])
+-- vim.cmd([[colorscheme catppuccin]])

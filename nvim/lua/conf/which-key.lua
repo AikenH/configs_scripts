@@ -70,6 +70,8 @@ wk.register({
     l = {
         name = "Langs",
         p = { "<cmd>MarkdownPreview<CR>", "Preview" },
+        b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>" ,"Breakpoint" },
+        u = { "<cmd>lua require'dapui'.toggle()<CR>", "dap-UI"},
     }
 }, { prefix = "<leader>"} )
 -- toggle the layout of tree and Outline
