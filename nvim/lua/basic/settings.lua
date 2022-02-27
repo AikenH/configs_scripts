@@ -8,7 +8,7 @@ vim.o.hidden = true
 
 vim.o.cursorline = false
 vim.o.syntax = "enable"
-vim.o.wildmenu = true
+vim.o.wildmenu = false
 vim.o.showmatch = true
 
 vim.o.number = true

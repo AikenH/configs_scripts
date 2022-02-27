@@ -10,6 +10,7 @@ packer.startup(
                 "wbthomason/packer.nvim"
             }
 
+            -- NOTE: UI of Nvim like sidebars or themes
             -- Install Chinese Doc Plugins for vim
             use {
                 "yianwillis/vimcdoc",
@@ -90,7 +91,7 @@ packer.startup(
 
             use {
                 "sainnhe/sonokai",
-                config = function() 
+                config = function()
                     require("conf.sonokai")
                 end
             }
@@ -162,6 +163,7 @@ packer.startup(
                     "nvim-lua/popup.nvim",
                     "BurntSushi/ripgrep",
                     "sharkdp/fd",
+                    "nvim-telescope/telescope-project.nvim",
                 },
                 config = function()
                     require("conf.telescope")
@@ -282,7 +284,7 @@ packer.startup(
                 end
             }
 
-            -- NOTE: LSP configuration Localization
+            -- NOTE: LSP configuration Localization and DAP settin
             -- support lsp
             use {
                 "neovim/nvim-lspconfig",
@@ -334,6 +336,34 @@ packer.startup(
 
             }
 
+            use {
+                "mfussenegger/nvim-dap",
+                config = function()
+                    require("conf.nvim-dap")
+                end
+            }
+
+            use {
+                "theHamsta/nvim-dap-virtual-text",
+                requires = {
+                    "mfussenegger/nvim-dap"
+                },
+                config = function()
+                    require("conf.nvim-dap-virtual-text")
+                end
+                    
+            }
+
+            use {
+                "rcarriga/nvim-dap-ui",
+                requires = {
+                    "mfussenegger/nvim-dap"
+                },
+                config = function()
+                    require("conf.nvim-dap-ui")
+                end
+            }
+
             -- NOTE: auto complete plugins in nvim using tabnine and vsnip
             use {
                 "hrsh7th/nvim-cmp",
@@ -356,13 +386,13 @@ packer.startup(
             }
 
             -- FIXME: github copilot can not been use in wsl which becus the web can not open
-            -- -- Github Copilot support
-            -- use {
-            --     "github/Copilot.vim",
-            --     config = function()
-            --         require("conf.copilot")
-            --     end
-            -- }
+            -- Github Copilot support
+            use {
+                "github/Copilot.vim",
+                config = function()
+                    require("conf.copilot")
+                end
+            }
 
             -- NOTE: extend lint for some langs but having bug so we donot enable for now
             -- use {
@@ -396,7 +426,35 @@ packer.startup(
             --     end
             -- }
 
+            -- long screenshot of code
+            use {
+                "kristijanhusak/vim-carbon-now-sh",
+                config = function()
+                    require("conf.nvim-carbon-now-sh")
+                end
+            }
 
+            -- auto session which save the windows for a project
+            -- this one will conflicts with dashboard. so we donot use it for now
+            -- use{
+            --     "rmagatti/auto-session",
+            --     config = function()
+            --         require("conf.auto-session")
+            --     end
+            -- }
+
+            -- auto save the cursor pos for files
+            use {
+                "ethanholz/nvim-lastplace",
+                config = function()
+                    require("conf.lastplace")
+                end
+            }
+
+            -- count the startup time for nvim, see what's problem/
+            use {
+                "dstein64/vim-startuptime",
+            }
 
         end,
         -- 使用浮动窗口

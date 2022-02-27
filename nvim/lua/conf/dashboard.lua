@@ -29,7 +29,7 @@ vim.g.dashboard_custom_header = {
 
 vim.g.dashboard_custom_section = {
     change_colorscheme = {
-        description = { " Scheme Change              SPC s c " },
+        description = { " Scheme Change              SPC f s " },
         command = "Telescope colorscheme",
     },
     find_frecency = {
@@ -37,7 +37,7 @@ vim.g.dashboard_custom_section = {
         command = "TodoTelescope ",
     },
     find_history = {
-        description = { " File History               SPC f e " },
+        description = { " File History               SPC f o " },
         command = "Telescope oldfiles",
     },
     find_project = {
@@ -53,7 +53,7 @@ vim.g.dashboard_custom_section = {
         command = "DashboardNewFile",
     },
     find_word = {
-        description = { " Word Find                  SPC f w " },
+        description = { " Word Find                  SPC f g " },
         command = "Telescope live_grep",
     },
 

@@ -12,4 +12,4 @@ if has("persistent_undo")
 ]]
 )
 -- 按键绑定，查看 undotree
-vim.keybinds.gmap("n", "<leader>3", ":UndotreeToggle<CR>", vim.keybinds.opts)
+vim.keybinds.gmap("n", "<F4>", ":UndotreeToggle<CR>", vim.keybinds.opts)

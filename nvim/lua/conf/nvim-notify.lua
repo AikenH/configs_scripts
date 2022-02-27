@@ -24,7 +24,7 @@ require("notify").setup({
   render = "default",
 
   -- Default timeout for notifications
-  timeout = 5000,
+  timeout = 2000,
 
   -- Max number of columns for messages
   max_width = nil,
@@ -33,7 +33,7 @@ require("notify").setup({
 
   -- For stages that change opacity this is treated as the highlight behind the window
   -- Set this to either a highlight group, an RGB hex value e.g. "#000000" or a function returning an RGB code for dynamic values
-  background_colour = "#070520",
+  background_colour = "#475520",
 
   -- Minimum width for notification windows
   minimum_width = 50,
