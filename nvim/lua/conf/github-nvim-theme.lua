@@ -18,4 +18,4 @@ require("github-theme").setup({
     }
   end
 })
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd([[colorscheme neon]])

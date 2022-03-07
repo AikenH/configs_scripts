@@ -1,5 +1,5 @@
 -- https://github.com/kyazdani42/nvim-tree.lua
-
+local tree_cb = require"nvim-tree.config".nvim_tree_callback
 require("nvim-tree").setup(
     {
         -- 自动关闭
@@ -30,7 +30,12 @@ require("nvim-tree").setup(
             enable = true,
             ignore = true,
             timeout = 500
-        }
+        },
+        mapping = {
+            list ={
+                { key = 'v', cb = tree_cb('vsplit') },
+            }
+        },
     }
 )
 

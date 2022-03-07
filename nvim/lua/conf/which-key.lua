@@ -53,8 +53,8 @@ wk.register({
     },
 }, { prefix = "<leader>" })
 
+-- the following is for <leader>-<key>
 wk.register({
-
     ["<leader>1"] = { "<cmd>BufferLineGoToBuffer 1<CR>", "Buffer-1" },
     ["<leader>2"] = { "<cmd>BufferLineGoToBuffer 2<CR>", "Buffer-2" },
     ["<leader>3"] = { "<cmd>BufferLineGoToBuffer 3<CR>", "Buffer-3" },
@@ -62,18 +62,32 @@ wk.register({
     ["<leader>5"] = { "<cmd>BufferLineGoToBuffer 5<CR>", "Buffer-5" },
     ["<leader>6"] = { "<cmd>BufferLineGoToBuffer 6<CR>", "Buffer-6" },
     ["<leader>7"] = { "<cmd>BufferLineGoToBuffer 7<CR>", "Buffer-7" },
-    
-
+    ["<leader>v"] = { "<cmd>vsp<CR>", "VertSplit" },
+    ["<leader>h"] = { "<cmd>sp<CR>", "Horsplit" },
 })
 
+-- for the languages's keymap settting
 wk.register({
     l = {
         name = "Langs",
-        p = { "<cmd>MarkdownPreview<CR>", "Preview" },
-        b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>" ,"Breakpoint" },
+        p = { "<cmd>MarkdownPreview<CR>", "md-Preview" },
+        b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>" ,"dap-break" },
         u = { "<cmd>lua require'dapui'.toggle()<CR>", "dap-UI"},
     }
 }, { prefix = "<leader>"} )
+
+wk.register({
+    w = {
+        name = "windows",
+        l = { "<cmd>vertical resize +2<CR>", "Left" },
+        h = { "<cmd>vertical resize -2<CR>", "Right" },
+        k = { "<cmd>resize -1<CR>", "Up" },
+        j = { "<cmd>resize +1<CR>", "Down" },
+    }
+}, { prefix = "<leader>"} )
+wk.register({
+    ["<leader>w="] = { "<cmd>wincmd =<CR>", "resize" }
+})
 -- toggle the layout of tree and Outline
 -- we use the F2, F3, F4 to replace this.
 -- wk.register({
@@ -83,8 +97,8 @@ wk.register({
 -- wk.register({
 --     ["<leader>2"] = { "<cmd>Vista!!<CR>", "Outline" },
 -- })
--- 
--- wk.register({
+--
+-- wk.register
 --     ["<leader>3"] = { "<cmd>UndotreeToggle<CR>", "undo-history" },
 -- })
 -- <Prefix = C> TBD

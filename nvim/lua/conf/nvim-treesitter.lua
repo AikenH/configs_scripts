@@ -22,12 +22,11 @@ require'nvim-treesitter.configs'.setup{
             node_incremental = '<CR>',
             node_decremental = '<BS>',
             --scope_incremental = '<TAB>',
-
         },
         -- 启用基于Treesitter的代码格式化(=) . NOTE: This is an experimental feature.
     },
     indent = {
-        enable = false 
+        enable = false
     },
      -- 彩虹括号，由 nvim-ts-rainbow 插件提供
     rainbow = {

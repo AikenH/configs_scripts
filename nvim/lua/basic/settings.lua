@@ -1,6 +1,10 @@
 -- Set up BASIC RULES for vim
 -- i may copy sth from my old config file of nvim
 vim.o.encoding = "UTF-8"
+-- support chinese?
+-- vim.o.termencoding = "UTF-8"
+-- vim.o.fileencoding = "UTF-8, ucs-bom, gb18080, gbk, gb2312, cp936"
+
 vim.o.updatetime = 100
 vim.o.showcmd = true
 vim.o.timeoutlen = 500
@@ -11,6 +15,9 @@ vim.o.syntax = "enable"
 vim.o.wildmenu = false
 vim.o.showmatch = true
 
+vim.o.confirm = true
+vim.o.compatible = false
+vim.o.wrap = false
 vim.o.number = true
 vim.o.relativenumber = false
 
@@ -36,6 +43,9 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.o.mouse = "a"
+vim.o.selection = "exclusive"
+vim.o.selectmode = "mouse,key"
+
 vim.o.clipboard = "unnamedplus"
 
 vim.o.backup = false
@@ -46,8 +56,9 @@ vim.o.swapfile = false
 
 -- we using the treesitter as out folder
 vim.o.foldenable = true
--- vim.o.foldmethod = "indent"
-vim.o.foldlevel = 100
+vim.o.foldmethod = "indent"
+-- vim.o.foldlevel = 100
+vim.cmd("autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))")
 
 vim.o.laststatus = 2
 vim.o.ruler = true

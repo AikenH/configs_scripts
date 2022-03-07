@@ -1,5 +1,5 @@
 -- using MAKRDOWN as example
--- setting up diff indents rule for diff lang
+-- setting up diff  ndents rule for diff lang
 
 -- 是否将tab 替换成 space
 vim.bo.expandtab = false

@@ -41,10 +41,33 @@ packer.startup(
             }
 
             -- Better Status bar plugins
+            -- use {
+            --     "windwp/windline.nvim",
+            --     config = function()
+            --         require("wlsample.bubble")
+            --     end
+            -- }
+
+            -- use {
+            --     "feline-nvim/feline.nvim",
+            --     requires = {
+            --         "kyazdani42/nvim-web-devicons",
+            --         "lewis6991/gitsigns.nvim",
+            --     },
+            --     config = function()
+            --         require("conf.feline")
+            --     end
+            -- }
+
             use {
-                "windwp/windline.nvim",
+                "nvim-lualine/lualine.nvim",
+                requires = {
+                    "kyazdani42/nvim-web-devicons",
+                    "lewis6991/gitsigns.nvim",
+                    "SmiteshP/nvim-gps",
+                },
                 config = function()
-                    require("wlsample.bubble")
+                    require("conf.lualine")
                 end
             }
 
@@ -94,13 +117,17 @@ packer.startup(
                 config = function()
                     require("conf.sonokai")
                 end
-            }
+            } 
 
             use {
                 "folke/tokyonight.nvim",
                 config = function()
                     require("conf.tokyonight")
                 end
+            }
+
+            use {
+                "ellisonleao/gruvbox.nvim",
             }
 
             use{
@@ -115,10 +142,38 @@ packer.startup(
             }
 
             use {
-                "luisiacc/gruvbox-baby",
+                "rafamadriz/neon",
                 config = function()
-                    require("conf.gruvbox-baby")
+                    require("conf.neon")
                 end
+            }
+
+            use {
+                "shaunsingh/moonlight.nvim",
+                config = function()
+                    require("conf.moonlight")
+                end
+            }
+
+            use {
+                "navarasu/onedark.nvim",
+                config = function()
+                    require("conf.onedark")
+                end
+            }
+
+            use {
+                "Th3Whit3Wolf/space-nvim",
+                config = function()
+                    require("conf.space-nvim")
+                end
+            }
+
+            -- align our code for better view
+            -- TODO: need to be config for keybind (can we do this)?
+            -- maybe we can config some regular type of it.
+            use {
+                "godlygeek/tabular",
             }
 
             -- Using airline to replace  buffline and status bar
@@ -376,7 +431,7 @@ packer.startup(
                 config = function()
                     require("conf.nvim-dap-virtual-text")
                 end
-                    
+
             }
 
             use {
@@ -426,11 +481,18 @@ packer.startup(
             --     end
             -- }
 
-            --outline
+            -- FIXME: outline, may be update by the aerial.
+            -- use {
+            --     "liuchengxu/vista.vim",
+            --     config = function ()
+            --         require("conf.vista")
+            --     end
+            -- }
+
             use {
-                "liuchengxu/vista.vim",
-                config = function ()
-                    require("conf.vista")
+                "stevearc/aerial.nvim",
+                config = function()
+                    require("conf.aerial")
                 end
             }
 
@@ -478,6 +540,14 @@ packer.startup(
             use {
                 "dstein64/vim-startuptime",
             }
+--
+            -- thi plugin cannot been used in the wsl2 so we enable this in terminal
+--             use {
+--                 "karb42/neoscroll.nvim",
+--                 config = function()
+--                     require("conf.neoscroll")
+--                 end
+--             }
 
         end,
         -- 使用浮动窗口

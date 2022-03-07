@@ -1,7 +1,7 @@
 -- TODO:read the lua syntax detail, and findout how to move our vimscipt to it
 -- like how to run a code and debug etc.
 
-vim.g.background_transparency = true
+vim.g.background_transparency = false
 vim.g.undotree_dir = "~/.cache/nvim/undodir"
 vim.g.vsnip_snippet_dir = "~/.config/nvim/snippet"
 -- NOTE: setting the dap python here
@@ -11,3 +11,71 @@ vim.g.python_path = "/home/aiken/anaconda3/bin/python"
 -- maybe with the order of install the plugins
 -- but we need to find out how to solve this
 -- vim.cmd([[colorscheme catppuccin]])
+
+-- Add header for those langs we usually code.
+vim.cmd('autocmd BufNewFile *.md,*.sh,*.cpp,*.py,*.lua exec ":lua set_title()"')
+function set_title()
+    filetype = vim.fn.expand("%:e")
+    -- set title for markdown
+    if filetype == "md" then
+        vim.fn.setline("1", "# " .. vim.fn.expand("%"))
+        vim.fn.append(vim.fn.line("."), "")
+        vim.fn.append(vim.fn.line(".")+1, "@Author: AikenHong")
+        vim.fn.append(vim.fn.line(".")+2, "@Mail: h.aiken.970@gmail.com")
+        vim.fn.append(vim.fn.line(".")+3, "@Date: " .. os.date("%Y-%m-%d %H:%M:%S"))
+        vim.fn.append(vim.fn.line(".")+4, "@Desc: ")
+
+    elseif filetype == "cpp" then
+        vim.fn.setline("1", "/*")
+        vim.fn.append(vim.fn.line("."), "Signature auto created by nvim")
+        vim.fn.append(vim.fn.line(".")+1, "@Author: AikenHong")
+        vim.fn.append(vim.fn.line(".")+2, "@Mail: h.aiken.970@gmail.com")
+        vim.fn.append(vim.fn.line(".")+3, "@Date: " .. os.date("%Y-%m-%d %H:%M:%S"))
+        vim.fn.append(vim.fn.line(".")+4, "@Desc: ")
+        vim.fn.append(vim.fn.line(".")+5, "*/")
+        vim.fn.append(vim.fn.line(".")+6, "#include <iostream>")
+        vim.fn.append(vim.fn.line(".")+7, "#include <string>")
+        vim.fn.append(vim.fn.line(".")+8, "#include <algorithm>")
+        vim.fn.append(vim.fn.line(".")+9, "#include <vector>")
+        vim.fn.append(vim.fn.line(".")+10, "#include <map>")
+        vim.fn.append(vim.fn.line(".")+11, "#include <set>")
+        vim.fn.append(vim.fn.line(".")+12, "#include <queue>")
+        vim.fn.append(vim.fn.line(".")+13, "#include <stack>")
+        vim.fn.append(vim.fn.line(".")+14, "#include <cmath>")
+        vim.fn.append(vim.fn.line(".")+15, "#include <list>")
+        vim.fn.append(vim.fn.line(".")+16, "")
+        vim.fn.append(vim.fn.line(".")+17, "using namespace std;")
+        vim.fn.append(vim.fn.line(".")+18, "")
+
+    elseif filetype == 'py' then
+        vim.fn.setline("1", "\"\"\"")
+        vim.fn.append(vim.fn.line("."), "Signature auto created by nvim")
+        vim.fn.append(vim.fn.line(".")+1, "@Author: AikenHong")
+        vim.fn.append(vim.fn.line(".")+2, "@Mail: h.aiken.970@gmail.com")
+        vim.fn.append(vim.fn.line(".")+3, "@Date: " .. os.date("%Y-%m-%d %H:%M:%S"))
+        vim.fn.append(vim.fn.line(".")+4, "@Desc: ")
+        vim.fn.append(vim.fn.line(".")+5, "\"\"\"")
+        vim.fn.append(vim.fn.line(".")+6, "")
+        vim.fn.append(vim.fn.line(".")+7, "import numpy as np")
+        vim.fn.append(vim.fn.line(".")+8, "import os")
+
+    elseif filetype == 'sh' then
+        vim.fn.setline("1", "#!/bin/bash")
+        vim.fn.append(vim.fn.line("."), "# " .. vim.fn.expand("%"))
+        vim.fn.append(vim.fn.line(".")+1, "# Author: AikenHong")
+        vim.fn.append(vim.fn.line(".")+2, "# Mail: h.aiken.970@gmail.com")
+        vim.fn.append(vim.fn.line(".")+3, "# Date: " .. os.date("%Y-%m-%d %H:%M:%S"))
+        vim.fn.append(vim.fn.line(".")+4, "# Desc: ")
+        vim.fn.append(vim.fn.line(".")+5, "")
+
+    elseif filetype == 'lua' then
+        vim.fn.setline("1", "--[[")
+        vim.fn.append(vim.fn.line("."), "Signature auto created by nvim")
+        vim.fn.append(vim.fn.line(".")+1, "@Author: AikenHong")
+        vim.fn.append(vim.fn.line(".")+2, "@Mail:h.aiken.970@gmail.com")
+        vim.fn.append(vim.fn.line(".")+3, "@Date: " .. os.date("%Y-%m-%d %H:%M:%S"))
+        vim.fn.append(vim.fn.line(".")+4, "@Desc: ")
+        vim.fn.append(vim.fn.line(".")+5, "]]")
+    end
+end
+
