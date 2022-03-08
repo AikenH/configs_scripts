@@ -96,6 +96,5 @@ function CompileRunFiles()
 
     end
 end
-
--- register it in the which key 
+-- register it in the which key
 vim.keybinds.gmap("", "<leader>lr", ":lua CompileRunFiles()<CR>", vim.keybinds.opts)
