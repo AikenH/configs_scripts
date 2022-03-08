@@ -79,3 +79,23 @@ function set_title()
     end
 end
 
+-- compile and run script directly without dap by Ctrl-F5
+function CompileRunFiles()
+    filetype = vim.fn.expand("%:e")
+    vim.cmd(":w")
+    if filetype == "cpp" then
+        vim.cmd(":!g++ -std=c++2a -Wall -Wextra -Werror -o a.out *.cpp")
+        vim.cmd(":!./a.out")
+        vim.cmd(":!rm a.out")
+
+    elseif filetype == "py" then
+        vim.cmd(":!python %")
+
+    elseif filetype == "sh" then
+        vim.cmd(":!sh %")
+
+    end
+end
+
+-- register it in the which key 
+vim.keybinds.gmap("", "<leader>lr", ":lua CompileRunFiles()<CR>", vim.keybinds.opts)

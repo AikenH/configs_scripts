@@ -73,6 +73,7 @@ wk.register({
         p = { "<cmd>MarkdownPreview<CR>", "md-Preview" },
         b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>" ,"dap-break" },
         u = { "<cmd>lua require'dapui'.toggle()<CR>", "dap-UI"},
+        r = { "<cmd>lua CompileRunFiles()<CR>", "Run-Files"}
     }
 }, { prefix = "<leader>"} )
 

@@ -57,8 +57,10 @@ vim.o.swapfile = false
 -- we using the treesitter as out folder
 vim.o.foldenable = true
 vim.o.foldmethod = "indent"
--- vim.o.foldlevel = 100
-vim.cmd("autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))")
+vim.o.foldlevel = 99
+-- make the foldlevel as the top
+-- vim.cmd("autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))")
+-- vim.o.foldnestmax = 3
 
 vim.o.laststatus = 2
 vim.o.ruler = true

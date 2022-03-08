@@ -135,10 +135,11 @@ cmp.setup.cmdline(
         sources = cmp.config.sources(
             {
                 {name = "path"}
-            },
-            {
-                {name = "cmdline"}
             }
+            -- {
+            --     -- 用keyword排除:!的情况，否则在wsl2中会卡死
+            --     {name = "cmdline", keyword_pattern=[=[[^[:blank:]\!]*]=]}
+            -- }
         )
     }
 )

@@ -2,7 +2,6 @@
 -- we use vim.g.python_path to control the version of our dap python
 -- we setting this in the conf files 
 
-
 return {
     adapters = {
         type = "executable",
