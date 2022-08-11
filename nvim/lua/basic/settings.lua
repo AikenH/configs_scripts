@@ -12,7 +12,7 @@ vim.o.hidden = true
 
 vim.o.cursorline = false
 vim.o.syntax = "enable"
-vim.o.wildmenu = false
+vim.o.wildmenu = true
 vim.o.showmatch = true
 
 vim.o.confirm = true
@@ -42,6 +42,7 @@ vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- support mouse operations full version. 
 vim.o.mouse = "a"
 vim.o.selection = "exclusive"
 vim.o.selectmode = "mouse,key"

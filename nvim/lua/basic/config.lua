@@ -1,11 +1,12 @@
 -- TODO:read the lua syntax detail, and findout how to move our vimscipt to it
 -- like how to run a code and debug etc.
 
-vim.g.background_transparency = false
+vim.cmd([[colorscheme dracula]])
+vim.g.background_transparency = true
 vim.g.undotree_dir = "~/.cache/nvim/undodir"
 vim.g.vsnip_snippet_dir = "~/.config/nvim/snippet"
 -- NOTE: setting the dap python here
-vim.g.python_path = "/home/aiken/anaconda3/bin/python"
+vim.g.python_path = "/home/aikenhong/anaconda3/bin/python"
 
 -- FIX: we can only change the theme in the github configs
 -- maybe with the order of install the plugins
@@ -18,12 +19,21 @@ function set_title()
     filetype = vim.fn.expand("%:e")
     -- set title for markdown
     if filetype == "md" then
-        vim.fn.setline("1", "# " .. vim.fn.expand("%"))
-        vim.fn.append(vim.fn.line("."), "")
-        vim.fn.append(vim.fn.line(".")+1, "@Author: AikenHong")
-        vim.fn.append(vim.fn.line(".")+2, "@Mail: h.aiken.970@gmail.com")
-        vim.fn.append(vim.fn.line(".")+3, "@Date: " .. os.date("%Y-%m-%d %H:%M:%S"))
-        vim.fn.append(vim.fn.line(".")+4, "@Desc: ")
+        vim.fn.setline("1", "---")
+        vim.fn.append(vim.fn.line("."), "title: " .. vim.fn.expand("%"))
+        vim.fn.append(vim.fn.line(".")+1, "catalog: true")
+        vim.fn.append(vim.fn.line(".")+2, "subtitle: ")
+        vim.fn.append(vim.fn.line(".")+3, "date: " .. os.date("%Y-%m-%d %H:%M:%S  "))
+        vim.fn.append(vim.fn.line(".")+4, "lang: cn")
+        vim.fn.append(vim.fn.line(".")+5, "header-img: /img/header_img/lml_bg1.jpg")
+        vim.fn.append(vim.fn.line(".")+6, "tag: ")
+        vim.fn.append(vim.fn.line(".")+7, "-  ")
+        vim.fn.append(vim.fn.line(".")+8, "categories: ")
+        vim.fn.append(vim.fn.line(".")+9, "-  ")
+        vim.fn.append(vim.fn.line(".")+10, "mathjax: true")
+        vim.fn.append(vim.fn.line(".")+11, "sticky: ")
+        vim.fn.append(vim.fn.line(".")+12, "")
+        vim.fn.append(vim.fn.line(".")+13, "---")
 
     elseif filetype == "cpp" then
         vim.fn.setline("1", "/*")

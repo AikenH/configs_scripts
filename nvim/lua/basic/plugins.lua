@@ -106,18 +106,26 @@ packer.startup(
             }
 
             use {
-                "projekt0n/github-nvim-theme",
+                "mcchrish/zenbones.nvim",
+                requires = "rktjmp/lush.nvim",
                 config = function()
-                    require("conf.github-nvim-theme")
+                    require("conf.zenbones")
                 end
             }
+
+            -- use {
+            --     "projekt0n/github-nvim-theme",
+            --     config = function()
+            --         require("conf.github-nvim-theme")
+            --     end
+            -- }
 
             use {
                 "sainnhe/sonokai",
                 config = function()
                     require("conf.sonokai")
                 end
-            } 
+            }
 
             use {
                 "folke/tokyonight.nvim",
@@ -244,6 +252,7 @@ packer.startup(
                     "BurntSushi/ripgrep",
                     "sharkdp/fd",
                     "nvim-telescope/telescope-project.nvim",
+                    -- "nvim-telescope/telescope-media-files.nvim"
                 },
                 config = function()
                     require("conf.telescope")
@@ -309,6 +318,13 @@ packer.startup(
                 run = "cd app && yarn install"
             }
 
+            use {
+                "ellisonleao/glow.nvim",
+                config = function()
+                    require("conf.glow")
+                end
+            }
+
             -- using the multiple-cursors (old version plugins )
             use {
                 "terryma/vim-multiple-cursors",
@@ -356,13 +372,13 @@ packer.startup(
                 end
             }
 
-            -- ez comment
-            use {
-                "terrortylor/nvim-comment",
-                config = function()
-                    require("conf.nvim-comment")
-                end
-            }
+             -- ez comment
+             use {
+                 "terrortylor/nvim-comment",
+                 config = function()
+                     require("conf.nvim-comment")
+                 end
+             }
 
             -- NOTE: LSP configuration Localization and DAP settin
             -- support lsp
@@ -380,6 +396,14 @@ packer.startup(
                     require("conf.nvim-lsp-installer")
                 end
             }
+
+            -- TODO: findout how to use this before we install it.
+            -- use {
+            --     "Pocco81/DAPInstall.nvim",
+            --     config = function()
+            --         require("conf.DAPInstall")
+            --     end
+            -- }
 
             -- make lsp ui better
             use {
@@ -474,14 +498,14 @@ packer.startup(
             }
 
             -- FIXME: extend lint for some langs but having bug so we donot enable for now
-            -- use {
-            --     "mfussenegger/nvim-lint",
-            --     config = function ()
-            --         require("conf.nvim-lint")
-            --     end
-            -- }
+            use {
+                "mfussenegger/nvim-lint",
+                config = function ()
+                    require("conf.nvim-lint")
+                end
+            }
 
-            -- FIXME: outline, may be update by the aerial.
+            -- outline, may be update by the aerial.
             -- use {
             --     "liuchengxu/vista.vim",
             --     config = function ()
@@ -521,12 +545,14 @@ packer.startup(
 
             -- auto session which save the windows for a project
             -- this one will conflicts with dashboard. so we donot use it for now
+            -- we add a keymap to do this function.
             -- use{
             --     "rmagatti/auto-session",
             --     config = function()
             --         require("conf.auto-session")
             --     end
             -- }
+           
 
             -- auto save the cursor pos for files
             use {
@@ -540,14 +566,25 @@ packer.startup(
             use {
                 "dstein64/vim-startuptime",
             }
---
+
+            -- -- TODO:using diff-vim to improve the vim-diff
+            -- use {
+            --     "sindrets/diffview.nvim",
+            --     requires = {
+            --         'nvim-lua/plenary.nvim',
+            --     },
+            --     config = function()
+            --         require("conf.diffview")
+            --     end
+            -- }
+
             -- thi plugin cannot been used in the wsl2 so we enable this in terminal
---             use {
---                 "karb42/neoscroll.nvim",
---                 config = function()
---                     require("conf.neoscroll")
---                 end
---             }
+            -- use {
+            --     "karb42/neoscroll.nvim",
+            --     config = function()
+            --         require("conf.neoscroll")
+            --     end
+            -- }
 
         end,
         -- 使用浮动窗口

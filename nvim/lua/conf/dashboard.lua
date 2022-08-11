@@ -1,4 +1,4 @@
-vim.g.dashboard_footer_icon = "🐬 "
+vim.g.dashboard_footer_icon = "🐬"
 vim.g.dashboard_default_executive = "telescope"
 vim.g.dashboard_custom_header = {
 [[    ___    ______ __ _______   ____  ___      _    ________  ___  ]],
@@ -6,7 +6,7 @@ vim.g.dashboard_custom_header = {
 [[  / /| |  / // ,<  / __/ /  |/ / /_/ /|// ___/ | / // // /|_/ /   ]],
 [[ / ___ |_/ // /| |/ /___/ /|  / __  /  (__  )| |/ // // /  / /    ]],
 [[/_/  |_/___/_/ |_/_____/_/ |_/_/ /_/  /____/ |___/___/_/  /_/     ]],
-[[            @Blogs: https://aikenh.github.io/about/               ]],
+[[                  @Blogs: https://aikenh.cn/                      ]],
 [[              ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⣠⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿            ]],
 [[              ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣡⣾⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣟⠻⣿⣿⣿⣿⣿⣿⣿⣿            ]],
 [[              ⣿⣿⣿⣿⣿⣿⣿⣿⡿⢫⣷⣿⣿⣿⣿⣿⣿⣿⣾⣯⣿⡿⢧⡚⢷⣌⣽⣿⣿⣿⣿⣿⣶⡌⣿⣿⣿⣿⣿⣿            ]],
@@ -56,9 +56,8 @@ vim.g.dashboard_custom_section = {
         description = { " Word Find                  SPC f g " },
         command = "Telescope live_grep",
     },
-
     quit = {
-        description = { "  × Quit Nvim                  :q       "},
+        description = { "× Quit Nvim                  :q       "},
         command = "q",
     }
 }

@@ -6,10 +6,24 @@ local dapui = require("dapui")
 -- 初始化调试界面
 dapui.setup(
     {
-        sidebar = {
-            -- dapui 的窗口设置在右边
-            position = "left"
-        }
+        layouts = {
+            elements = {
+                'scopes',
+                'breakpoint',
+                'stacks',
+                'watches',
+            },
+            size = 40,
+            position = 'left',
+        },
+        {
+            elements = {
+                'repl',
+                'console',
+            },
+            size = 10,
+            position = 'bottom',
+        },
     }
 )
 

@@ -26,7 +26,8 @@ vim.keybinds.gmap("n", "<A-Right>", ':wincmd l<CR>', vim.keybinds.opts)
 -- mapping select all and copy of Ca Cc
 vim.keybinds.gmap("", "<C-A>", "ggVGY", vim.keybinds.opts)
 vim.keybinds.gmap("!", "<C-A>", "<Esa>ggVGY", vim.keybinds.opts)
-vim.keybinds.gmap("v", "<C-c>", '"+y', vim.keybinds.opts)
+-- vim.keybinds.gmap("v", "<C-c>", '"+y', vim.keybinds.opts)
+-- vim.keybinds.gmap("v", "<C-v>", '"*p', vim.keybinds.opts)
 
 -- cancel the hightlight after esa
 vim.keybinds.gmap("n", "<ESC>", ":nohlsearch<CR>", vim.keybinds.opts)

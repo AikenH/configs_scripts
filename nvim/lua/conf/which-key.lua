@@ -30,7 +30,8 @@ wk.register({
         c = { "<cmd>NvimTreeFindFile<CR>", "Cur-FileTree" },
         a = { "<cmd>Telescope lsp_code_actions theme=dropdown<CR>", "Find Actions" },
         s = { "<cmd>Telescope colorscheme theme=dropdown<CR>", "Find Themes" },
-        p = { "<cmd>Telescope project<CR>", "Find Project" }
+        p = { "<cmd>Telescope project<CR>", "Find Project" },
+        d = { "<cmd>Telescope aerial<CR>", "Find Define"},
     },
 }, { prefix = "<leader>" })
 
@@ -40,16 +41,11 @@ wk.register({
         name = "Term&Tags",
         t = { "<cmd>exe v:count.'ToggleTerm'<CR>", "O/E Terminal" },
         f = { "<cmd>lua require('toggleterm').float_toggle()<CR>", "Float-Trem" },
-        g = { "<cmd>lua require('toggleterm').lazygit_toggle()<CR>", "Lazygit"},
+        g = { "<cmd>lua require('toggleterm').lazygit_toggle()<CR>", "Lazygit" },
         a = { "<cmd>ToggleTermToggleAll<CR>", "Toggleterm" },
         q = { "<cmd>Bdelete!<CR>", "Quit-Buff" },
-        -- ["1"] = { "<cmd>BufferLineGoToBuffer 1<CR>", "Buffer-1" },
-        -- ["2"] = { "<cmd>BufferLineGoToBuffer 2<CR>", "Buffer-2" },
-        -- ["3"] = { "<cmd>BufferLineGoToBuffer 3<CR>", "Buffer-3" },
-        -- ["4"] = { "<cmd>BufferLineGoToBuffer 4<CR>", "Buffer-4" },
-        -- ["5"] = { "<cmd>BufferLineGoToBuffer 5<CR>", "Buffer-5" },
-        -- ["6"] = { "<cmd>BufferLineGoToBuffer 6<CR>", "Buffer-6" },
-        -- ["7"] = { "<cmd>BufferLineGoToBuffer 7<CR>", "Buffer-7" },
+        l = { "<cmd>set background=light<CR>", "Light-Theme" },
+        d = { "<cmd>set background=dark<CR>", "Dark-Theme" },
     },
 }, { prefix = "<leader>" })
 
@@ -74,7 +70,8 @@ wk.register({
         b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>" ,"dap-break" },
         u = { "<cmd>lua require'dapui'.toggle()<CR>", "dap-UI"},
         r = { "<cmd>lua CompileRunFiles()<CR>", "Run-Files"},
-        t = { "<cmd>retab!<CR>", "Tab2Spc" }
+        t = { "<cmd>retab!<CR>", "Tab2Spc" },
+        g = { "<cmd>Glow<CR>", "GlowMd" },
     }
 }, { prefix = "<leader>"} )
 

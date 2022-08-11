@@ -3,7 +3,7 @@ local tree_cb = require"nvim-tree.config".nvim_tree_callback
 require("nvim-tree").setup(
     {
         -- 自动关闭
-        auto_close = true,
+        -- auto_close = true
         -- 视图
         view = {
             -- 宽度
@@ -13,7 +13,7 @@ require("nvim-tree").setup(
             -- 隐藏顶部的根目录显示
             hide_root_folder = false,
             -- 自动调整大小
-            auto_resize = true
+            -- auto_resize = true
         },
         diagnostics = {
             -- 是否启用文件诊断信息
@@ -31,11 +31,11 @@ require("nvim-tree").setup(
             ignore = true,
             timeout = 500
         },
-        mapping = {
-            list ={
-                { key = 'v', cb = tree_cb('vsplit') },
-            }
-        },
+        -- mapping = {
+        --     list ={
+        --         { key = 'v', cb = tree_cb("vsplit") },
+        --     }
+        -- },
     }
 )
 
