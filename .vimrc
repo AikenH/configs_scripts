@@ -13,13 +13,20 @@ set magic
 set showcmd
 set wildmenu
 set cmdheight=2
+"set textwidth=80
 set laststatus=2
+set completeopt=preview,menu
 
 " set the basic function
 set nu
 set nowrap
 set confirm
 set history=1000
+set timeoutlen=350
+
+" set the scoll rule
+set scrolljump=5
+set scrolloff=1
 
 " the indent
 set ai
@@ -63,6 +70,7 @@ set autoread
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ [TIME=%{strftime(\"%d/%m\-\%H:%M\")}]
 " :set statusline=%2*%n%m%r%h%w%*\ %F\ %1*[FORMAT=%2*%{&ff}:%{&fenc!=''?&fenc:&enc}%1*]\ [TYPE=%2*%Y%1*]\ [COL=%2*%03v%1*]\ [ROW=%2*%03l%1*/%3*%L(%p%%)%1*]\
 
+" [KEYMAPPING PART]
 " set leaderkey to space
 let mapleader="\<space>"
 
@@ -72,27 +80,46 @@ nmap <S-tab> V<
 vmap <tab> >gv
 vmap <S-tab> <gv
 
-set completeopt=preview,menu
-
 " del the space in end.
 nnoremap <leader>de :%s/\s\+$//<cr>:let @/=''<CR>
 " replace space as tab to solve the mix indent problem
 nnoremap <leader>ds :retab!<CR>
 " edit the nvim config file
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
-" show diff
+" show diff <filename>
 nnoremap <leader>df :vert diffsplit
 " list file tree
 map <leader>ft :tabnew .<cr>
-" close tab
-nmap <leader>tq :bp<cr>:bd #<cr>
+
+" split windows
+nmap <leader>h :vsp
+nmap <leader>s :sp
 
 " switch between windows
-nmap <silent> <leader>k :wincmd k<CR>
-nmap <silent> <leader>j :wincmd j<CR>
-nmap <silent> <leader>h :wincmd h<CR>
-nmap <silent> <leader>l :wincmd l<CR>
+nmap <silent> <leader>kk :wincmd k<CR>
+nmap <silent> <leader>jj :wincmd j<CR>
+nmap <silent> <leader>hh :wincmd h<CR>
+nmap <silent> <leader>ll :wincmd l<CR>
 
+" basic keymapping
+nnoremap <leader>q :q<CR>
+nnoremap <leader>qa :qa<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>wa :wa<CR>
+
+" tab operation
+nmap <leader>ts :tabs<cr>
+nmap <leader>tq :tabclose<cr>
+nmap <leader>tn :tabn<cr>
+nmap <leader>tp :tabp<cr>
+
+" add some keyshot in command mode
+nmap <C-a> <Home>
+nmap <C-e> <End>
+nmap <C-p> <PageUp>
+nmap <C-n> <PageDown>
+
+" [AUTOCMD PART]
 " compile and run script
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
