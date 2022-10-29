@@ -33,6 +33,11 @@ set nu
 set nowrap
 set confirm
 set history=1000
+set timeoutlen=350
+
+" set the scoll rule
+set scrolljump=5
+set scrolloff=1
 
 " the indent
 set ai
@@ -96,7 +101,7 @@ nnoremap <leader>de :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>ds :retab!<CR>
 " edit the nvim config file
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
-" show diff
+" show diff <filename>
 nnoremap <leader>df :vert diffsplit
 " list file tree
 map <leader>ft :tabnew .<cr>
@@ -114,6 +119,18 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>qa :qa<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>wa :wa<CR>
+
+" tab operation
+nmap <leader>ts :tabs<cr>
+nmap <leader>tq :tabclose<cr>
+nmap <leader>tn :tabn<cr>
+nmap <leader>tp :tabp<cr>
+
+" add some keyshot in command mode
+nmap <C-a> <Home>
+nmap <C-e> <End>
+nmap <C-p> <PageUp>
+nmap <C-n> <PageDown>
 
 " [AUTOCMD PART]
 " compile and run script
