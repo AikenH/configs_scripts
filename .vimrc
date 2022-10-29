@@ -11,31 +11,43 @@ set clipboard+=unnamed
 set ruler
 set magic
 set showcmd
+set ttyfast
 set wildmenu
+set showmode
+set lazyredraw
 set cmdheight=2
-"set textwidth=80
 set laststatus=2
 set completeopt=preview,menu
+set backspace=indent,eol,start
+
+" detect the file type
+filetype on
+filetype plugin indent on
+
+" set the theme
+set t_Co=256
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
 
 " set the basic function
 set nu
 set nowrap
 set confirm
 set history=1000
-set timeoutlen=350
-
-" set the scoll rule
-set scrolljump=5
-set scrolloff=1
 
 " the indent
 set ai
-set si
-set cindent
+"set si
+"set cindent
+autocmd Filetype cpp setlocal si cindent
+
+" the tab setting
 set smarttab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+
+autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 " the search function and hilight
 set showmatch " show match brackets
@@ -54,20 +66,18 @@ set nobackup
 " highlight the syntax
 syntax on
 
-" detect the file type
-filetype on
 
 " suppost chinese encoding
 set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-set list lcs=trail:·,tab:»·
+set list lcs=trail:·,tab:»·,nbsp:.,extends:#
 
 " auto load when file change
 set autoread
 
 " reference : https://blog.csdn.net/strategycn/article/details/7620261
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ [TIME=%{strftime(\"%d/%m\-\%H:%M\")}]
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ [TIME=%{strftime('%c')}]
 " :set statusline=%2*%n%m%r%h%w%*\ %F\ %1*[FORMAT=%2*%{&ff}:%{&fenc!=''?&fenc:&enc}%1*]\ [TYPE=%2*%Y%1*]\ [COL=%2*%03v%1*]\ [ROW=%2*%03l%1*/%3*%L(%p%%)%1*]\
 
 " [KEYMAPPING PART]
@@ -86,38 +96,24 @@ nnoremap <leader>de :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>ds :retab!<CR>
 " edit the nvim config file
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
-" show diff <filename>
+" show diff
 nnoremap <leader>df :vert diffsplit
 " list file tree
 map <leader>ft :tabnew .<cr>
-
-" split windows
-nmap <leader>h :vsp
-nmap <leader>s :sp
+" close tab
+nmap <leader>tq :bp<cr>:bd #<cr>
 
 " switch between windows
-nmap <silent> <leader>kk :wincmd k<CR>
-nmap <silent> <leader>jj :wincmd j<CR>
-nmap <silent> <leader>hh :wincmd h<CR>
-nmap <silent> <leader>ll :wincmd l<CR>
+nmap <silent> <C>k :wincmd k<CR>
+nmap <silent> <C>j :wincmd j<CR>
+nmap <silent> <C>h :wincmd h<CR>
+nmap <silent> <C>l :wincmd l<CR>
 
 " basic keymapping
 nnoremap <leader>q :q<CR>
 nnoremap <leader>qa :qa<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>wa :wa<CR>
-
-" tab operation
-nmap <leader>ts :tabs<cr>
-nmap <leader>tq :tabclose<cr>
-nmap <leader>tn :tabn<cr>
-nmap <leader>tp :tabp<cr>
-
-" add some keyshot in command mode
-nmap <C-a> <Home>
-nmap <C-e> <End>
-nmap <C-p> <PageUp>
-nmap <C-n> <PageDown>
 
 " [AUTOCMD PART]
 " compile and run script
