@@ -105,13 +105,13 @@ packer.startup(
                 end
             }
 
-            use {
-                "mcchrish/zenbones.nvim",
-                requires = "rktjmp/lush.nvim",
-                config = function()
-                    require("conf.zenbones")
-                end
-            }
+            -- use {
+            --     "mcchrish/zenbones.nvim",
+            --     requires = "rktjmp/lush.nvim",
+            --     config = function()
+            --         require("conf.zenbones")
+            --     end
+            -- }
 
             -- use {
             --     "projekt0n/github-nvim-theme",
@@ -134,20 +134,20 @@ packer.startup(
                 end
             }
 
-            use {
-                "ellisonleao/gruvbox.nvim",
-            }
+            -- use {
+            --     "ellisonleao/gruvbox.nvim",
+            -- }
 
             use{
                 "folke/lsp-colors.nvim",
             }
 
-            use {
-                "Mofiqul/dracula.nvim",
-                config = function()
-                    require("conf.dracula")
-                end
-            }
+            -- use {
+            --     "Mofiqul/dracula.nvim",
+            --     config = function()
+            --         require("conf.dracula")
+            --     end
+            -- }
 
             use {
                 "rafamadriz/neon",
@@ -276,13 +276,13 @@ packer.startup(
                 end
             }
 
-            -- autosave file for keep code safe
-            use {
-                "Pocco81/AutoSave.nvim",
-                config = function()
-                    require("conf.AutoSave")
-                end
-            }
+            -- -- autosave file for keep code safe
+            -- use {
+            --     "Pocco81/AutoSave.nvim",
+            --     config = function()
+            --         require("conf.AutoSave")
+            --     end
+            -- }
 
             -- undo buffer which can keep u or C-R after close file
             use {
@@ -318,12 +318,12 @@ packer.startup(
                 run = "cd app && yarn install"
             }
 
-            use {
-                "ellisonleao/glow.nvim",
-                config = function()
-                    require("conf.glow")
-                end
-            }
+            -- use {
+            --     "ellisonleao/glow.nvim",
+            --     config = function()
+            --         require("conf.glow")
+            --     end
+            -- }
 
             -- using the multiple-cursors (old version plugins )
             use {
@@ -567,24 +567,32 @@ packer.startup(
                 "dstein64/vim-startuptime",
             }
 
-            -- -- TODO:using diff-vim to improve the vim-diff
-            -- use {
-            --     "sindrets/diffview.nvim",
-            --     requires = {
-            --         'nvim-lua/plenary.nvim',
-            --     },
-            --     config = function()
-            --         require("conf.diffview")
-            --     end
-            -- }
+            -- TODO:using diff-vim to improve the vim-diff
+            use {
+                "sindrets/diffview.nvim",
+                requires = {
+                    'nvim-lua/plenary.nvim',
+                },
+                config = function()
+                    require("conf.diffview")
+                end
+            }
 
             -- thi plugin cannot been used in the wsl2 so we enable this in terminal
-            -- use {
-            --     "karb42/neoscroll.nvim",
-            --     config = function()
-            --         require("conf.neoscroll")
-            --     end
-            -- }
+            use {
+                "karb94/neoscroll.nvim",
+                config = function()
+                    require("conf.neoscroll")
+                end
+            }
+
+            -- smooth scroll function
+            use {
+                'declancm/cinnamon.nvim',
+                config = function()
+                    require('cinnamon').setup()
+                end
+            }
 
         end,
         -- 使用浮动窗口

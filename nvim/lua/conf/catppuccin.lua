@@ -152,4 +152,4 @@ require("catppuccin").setup({
 -- )
 --
  -- 应用主题
-vim.cmd([[colorscheme space-nvim]])
+vim.cmd([[colorscheme edge]])

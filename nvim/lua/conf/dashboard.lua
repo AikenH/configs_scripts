@@ -1,6 +1,17 @@
-vim.g.dashboard_footer_icon = "🐬"
-vim.g.dashboard_default_executive = "telescope"
-vim.g.dashboard_custom_header = {
+local db = require('dashboard')
+
+local logo = [[
+███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗
+████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║
+██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║
+██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║
+██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║
+╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝
+]]
+
+db.dashboard_footer_icon = "🐬"
+db.dashboard_default_executive = 'telescope'
+db.custom_header = {
 [[    ___    ______ __ _______   ____  ___      _    ________  ___  ]],
 [[   /   |  /  _/ //_// ____/ | / / / / ( )____| |  / /  _/  |/  /  ]],
 [[  / /| |  / // ,<  / __/ /  |/ / /_/ /|// ___/ | / // // /|_/ /   ]],
@@ -25,39 +36,14 @@ vim.g.dashboard_custom_header = {
 [[              ⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀⡆⣠⢀⣴⣏⡀⠀⠀⠀⠉⠀⠀⢀⣠⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿            ]],
 [[              ⠿⠛⠛⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣯⣟⠷⢷⣿⡿⠋⠀⠀⠀⠀⣵⡀⢠⡿⠋⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿            ]],
 [[              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⢿⣿⣿⠂⠀⠀⠀⠀⠀⢀⣽⣿⣿⣿⣿⣿⣿⣿⣍⠛⠿⣿⣿⣿⣿⣿⣿            ]],
-	}
+}
 
-vim.g.dashboard_custom_section = {
-    change_colorscheme = {
-        description = { " Scheme Change              SPC f s " },
-        command = "Telescope colorscheme",
-    },
-    find_frecency = {
-        description = { " Todo History               SPC f t " },
-        command = "TodoTelescope ",
-    },
-    find_history = {
-        description = { " File History               SPC f o " },
-        command = "Telescope oldfiles",
-    },
-    find_project = {
-        description = { " Project Find               SPC f p " },
-        command = "Telescope project",
-    },
-    find_file = {
-        description = { " File Find                  SPC f f " },
-        command = "Telescope find_files",
-    },
-    file_new = {
-        description = { " File New                   SPC f n " },
-        command = "DashboardNewFile",
-    },
-    find_word = {
-        description = { " Word Find                  SPC f g " },
-        command = "Telescope live_grep",
-    },
-    quit = {
-        description = { "× Quit Nvim                  :q       "},
-        command = "q",
-    }
+db.custom_center = {
+    {icon = '', desc = ' NEOVIM Theme Change                ', action = 'Telescope colorscheme theme=dropdown', shortcut = 'SPC f s'},
+    {icon = '', desc = ' TODO History                       ', action = 'TodoTelescope theme=dropdown', shortcut = 'SPC f t'},
+    {icon = '', desc = ' FILE History                       ', action = 'Telescope oldfiles theme=dropdown', shortcut = 'SPC f o'},
+    {icon = '', desc = ' FILE Find                          ', action = 'Telescope find_files', shortcut = 'SPC f f'},
+    {icon = '', desc = ' PROJECT Find                       ', action = 'Telescope project theme=dropdown', shortcut = 'SPC f p'},
+    {icon = '', desc = ' WORD Find                          ', action = 'Telescope live_grep', shortcut = 'SPC f g'},
+    {icon = '×', desc = ' QUIT Editor                         ', action = 'q', shortcut = ':Quit'}
 }

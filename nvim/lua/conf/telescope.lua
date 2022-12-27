@@ -24,3 +24,8 @@ vim.keybinds.gmap("n", "<leader>fp", "<cmd>Telescope project theme=dropdown<CR>"
 vim.keybinds.gmap("n", "<leader>fd", "<cmd>Telescope aerial theme=dropdown<CR>", vim.keybinds.opts)
 -- here introduce some keymap of telescope's projects manage.
 -- d: delete c: create r: rename s: search inside whithin your project
+
+-- project add not work in those repo which witout git init
+-- manaly add the repo in the config file ~/.local/share/nvim/telescope-projects.txt
+-- format like :
+-- Nvim LabelExtrator=/Users/aikenhong/workspace/LabelExtrator=w0=1=1

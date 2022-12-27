@@ -5,4 +5,4 @@ vim.g.edge_show_eob = 1
 vim.g.edge_better_performance = 1
 vim.g.edge_transparent_background = vim.g.background_transparency
 
--- vim.cmd([[colorscheme edge]])
+vim.cmd([[colorscheme catppuccin]])

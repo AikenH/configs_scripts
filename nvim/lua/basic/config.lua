@@ -1,7 +1,7 @@
 -- TODO:read the lua syntax detail, and findout how to move our vimscipt to it
 -- like how to run a code and debug etc.
 
-vim.cmd([[colorscheme dracula]])
+vim.cmd([[colorscheme catppuccin]])
 vim.g.background_transparency = true
 vim.g.undotree_dir = "~/.cache/nvim/undodir"
 vim.g.vsnip_snippet_dir = "~/.config/nvim/snippet"

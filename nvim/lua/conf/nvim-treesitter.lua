@@ -3,7 +3,11 @@
 require'nvim-treesitter.configs'.setup{
     -- 安装 language parser
     -- :TSInstallInfo 命令查看支持的语言
-    ensure_installed = "all",
+    ensure_installed = {
+        "c", "cpp", "python", 'html', "java",
+        "vue", "c_sharp", "javascript", "bash", "css",
+        "dockerfile", "gitignore", "go", "yaml", "json",
+        "latex", "lua", "markdown", "scheme", "vim"},
     sync_install = false,
     -- 启用代码高亮功能
     highlight = {
@@ -16,7 +20,7 @@ require'nvim-treesitter.configs'.setup{
     -- if we want to enable this function we should change the tab
     -- which has conflict with the indent keymap with our setting
     incremental_selection = {
-        enable = true,
+        enable = false,
         keymaps = {
             init_selection = '<CR>',
             node_incremental = '<CR>',
